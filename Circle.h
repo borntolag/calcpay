@@ -1,15 +1,24 @@
-class Circle
+#include <string>
+
+using std::string;
+
+
+// class definition for Circle which has Shape class as parent
+class Circle : public Shape
 {
-    // class properties  (private)
+
+    // class data members  (private)
     double radius;
 
 
 public:
     // Declare Class Constructor
-    Circle (double radius);
+    Circle (string shapeType, string shapeUM, double radius);
+    virtual ~Circle();
 
-    // Declare public methods for class.
-    double calcArea();
+    // Declare public member functions for class.
+    virtual double calcArea();
+    virtual void print();
 
 };
 

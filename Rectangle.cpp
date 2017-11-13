@@ -1,19 +1,26 @@
+#include "Shape.h"
 #include "Rectangle.h"
 
-// Implementation of class constructor
-Rectangle::Rectangle(int awidth, int alength)
-{
-    width = awidth;
-    length = alength;
+#include <string>
+#include <iostream>
 
-}
+using namespace std;
 
+// Implementation of class constructor with call to parent constructor
+Rectangle::Rectangle(string ashapeType, string ashapeUM, double awidth, double alength) :
+    Shape (ashapeType, ashapeUM), width(awidth), length(alength)
+{}
+Rectangle::~Rectangle()
+{}
 // Implementation of calcArea method
 
-int Rectangle::calcArea()
+double Rectangle::calcArea()
 {
     return width * length;
 }
 
-
-
+void Rectangle::print()
+{
+    cout <<" Area of " << getType() << " #" << getID() << " Area = " <<
+        calcArea() << getUM() << "\n";
+}

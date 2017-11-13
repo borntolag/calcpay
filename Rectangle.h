@@ -1,16 +1,24 @@
+#include <string>
 
-class Rectangle
+
+using std::string;
+
+// class definition for Rectangle which has Shape class as parent
+
+class Rectangle : public Shape
 {
-    // define class properties
-    int width, length;
+    // define class data members
+    double width, length;
 
 
 public:
     // Declare class constructor
-    Rectangle(int aheight, int alength);
+    Rectangle(string shapeType, string shapeUM, double width, double length);
+    virtual ~Rectangle();
 
-    // Declare class methods
-    int calcArea ();
+    // Declare class member functions
+    virtual double calcArea ();
+    virtual void print();
 };
 
 

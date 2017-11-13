@@ -1,16 +1,24 @@
+#include <string>
 
-class Square
+using std::string;
+
+
+// class definition for Square which has Shape class as parent
+class Square : public Shape
 {
     // define class data members
     double side;
 
     public:
 
-        // Declare class constructor
-        Square(double aside);
+        // Declare class constructor/deconstructor
+        Square(string shapeType, string shapeUM, double aside);
+        virtual ~Square();
 
         // Define Class Member Functions
-        double calcArea();
+        virtual double calcArea();
+
+        virtual void print();
 
 
 };
